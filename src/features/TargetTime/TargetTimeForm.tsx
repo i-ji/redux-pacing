@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 
 import TargetTimeInput from "./TargetTimeInput";
-import Select from "./Select";
+import Select from "../Select";
 
 interface FormType {
   hour: string;
@@ -11,10 +11,6 @@ interface FormType {
   changeMinute: (e: React.ChangeEvent<HTMLInputElement>) => void;
   changeSecond: (e: React.ChangeEvent<HTMLInputElement>) => void;
   changeDistance: (e: string) => void;
-  five: string;
-  ten: string;
-  half: string;
-  full: string;
   calculateTime: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
@@ -26,10 +22,6 @@ const TargetTimeForm = ({
   changeMinute,
   changeSecond,
   changeDistance,
-  five,
-  ten,
-  half,
-  full,
   calculateTime,
 }: FormType) => {
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
@@ -53,13 +45,7 @@ const TargetTimeForm = ({
           changeSecond={changeSecond}
         />
 
-        <Select
-          five={five}
-          ten={ten}
-          half={half}
-          full={full}
-          changeDistance={changeDistance}
-        />
+        <Select changeDistance={changeDistance} />
 
         <div>
           <Button>Calculate</Button>

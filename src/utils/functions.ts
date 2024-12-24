@@ -1,9 +1,11 @@
 import { LogType } from "./interface";
 
-export const five = "5000";
-export const ten = "10000";
-export const half = "21097.5";
-export const full = "42195";
+export const eventDistance = {
+  five: "5000",
+  ten: "10000",
+  half: "21097.5",
+  full: "42195",
+};
 
 // padstart
 function timePadStart(time: string | number) {
@@ -46,7 +48,7 @@ export function totalSecondsTime(
 // 5km,10kmなら１kmおき、half,fullなら5kmおきかの仕分け
 export function getDivide(distance: string) {
   let divide: number;
-  if (distance === five || distance === ten) {
+  if (distance === eventDistance.five || distance === eventDistance.ten) {
     divide = 1000;
   } else {
     divide = 5000;
@@ -91,7 +93,7 @@ export function calculateCumulative(distance: string, total: number) {
     let time: string[];
     time = formatedTime(i * total);
 
-    if (distance === full || distance === half) {
+    if (distance === eventDistance.half || distance === eventDistance.full) {
       passing = `${(i * divide) / 1000}km`;
       time = formatedTime(i * 5 * total);
     }
@@ -146,13 +148,13 @@ export function calculateLap(
   }
 
   // フルマラソンとハーフマラソンの距離調整
-  if (distance === full) {
+  if (distance === eventDistance.full) {
     lapLogs[lapLogs.length - 1].time = `${
       formatedTime(2.195 * Number(total))[0]
     }:${formatedTime(2.195 * Number(total))[1]}:${
       formatedTime(2.195 * Number(total))[2]
     }`;
-  } else if (distance === half) {
+  } else if (distance === eventDistance.half) {
     lapLogs[lapLogs.length - 1].time = `${
       formatedTime(1.0975 * Number(total))[0]
     }:${formatedTime(1.0975 * Number(total))[1]}:${

@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { Input } from "@/components/ui/input";
 
 type InputElType = {
@@ -8,8 +7,6 @@ type InputElType = {
 };
 
 const InputEl = ({ placeholder, value, setTime }: InputElType) => {
-  //   const [time, setTime] = useState<string>("");
-
   return (
     <Input
       type="number"
