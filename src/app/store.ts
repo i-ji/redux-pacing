@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { targetSlice } from "@/features/FormAndDisplay/TargetSlice";
+import { targetSlice } from "@/features/FormAndDisplay/slice/TargetSlice";
 
 export const store = configureStore({
   reducer: {

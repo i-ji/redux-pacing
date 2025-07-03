@@ -6,11 +6,17 @@ interface DisplayType {
   avarage: string;
   cumulative: LogType[];
   lap: LogType[];
+  displayRef: React.RefObject<HTMLDivElement>;
 }
 
-const Display = ({ avarage, cumulative, lap }: DisplayType) => {
+const Display = ({ avarage, cumulative, lap, displayRef }: DisplayType) => {
   return (
-    <Tabs defaultValue="cumulative" className="w-full text-center pb-20">
+    <Tabs
+      defaultValue="cumulative"
+      className="w-full text-center pb-20"
+      ref={displayRef}
+    >
+      <div></div>
       <TabsList className="w-full">
         <TabsTrigger value="cumulative" className="w-1/2">
           タイム

@@ -1,4 +1,4 @@
-import InputEl from "../../components/parts/InputEl";
+import InputEl from "../../../components/parts/InputEl";
 
 interface InputType {
   minute: string;

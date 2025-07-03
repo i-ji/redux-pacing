@@ -1,50 +1,35 @@
-# React + TypeScript + Vite
+## The View
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img width="1064" src="https://github.com/user-attachments/assets/e5579b20-ee37-4ca6-8b2c-88a2e7502796">
 
-Currently, two official plugins are available:
+## URL
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+こちらのリンクよりご利用ください。
 
-## Expanding the ESLint configuration
+https://pacing-app.vercel.app/
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 概要
 
-- Configure the top-level `parserOptions` property like this:
+・目標タイムを入力して走る距離を選択するとペースを計算できる。
+・目標ペースを入力して走る距離を選択するとタイムも計算できる。
+・ラップタイムと累積タイムが表示される。
+・1 キロ平均タイムとトラック一周分のタイムも算出できる。
+・5000m,10000m、ハーフマラソン、フルマラソンの４つに対応
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## サービスへの想い
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+・自身のランナーとしての経験から作成
+・インターバル走やペース走の目標ペースを暗算するのが大変なので作った。
+・redux を使って状態管理
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 使用技術
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- フロントエンド React 18.3.1 TypeScript 5.6.2
+- スタイリング Tailwind CSS 3.4.16 shadcn/ui
+- 状態管理 redux 9.2.0
+- デプロイ vercel
+
+## 作者について
+
+<a href="https://github.com/i-ji">@j-ito</a> <br>
+<a href="https://j-ito-portfolio.vercel.app/">ポートフォリオ</a>
